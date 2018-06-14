@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var authRouter = require('./routes/authentication');
 
 var app = express();
 
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', indexRouter);
+app.use('/auth', authRouter);
 
 app.get('/*', function(req, res) {
 	res.sendFile(path.join(__dirname, 'public/index.html'), function(err) {
@@ -37,7 +39,6 @@ app.use(function(err, req, res, next) {
 
 	// render the error page
 	res.status(err.status || 500);
-	res.render('error');
 });
 
 module.exports = app;
