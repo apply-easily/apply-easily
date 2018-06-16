@@ -16,6 +16,6 @@ router.get('/sign-in', (req, res) => {
 	res.render('authentication/sign-in');
 });
 
-router.post('sign-in', requireSignIn, Authentication.signin);
+router.post('/sign-in', requireSignIn, Authentication.signin);
 
 module.exports = router;
