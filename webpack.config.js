@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './frontend/src/index.js',
 	devtool: 'source-map',
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'public/dist')
+		path: path.resolve(__dirname, 'backend/public/dist')
 	},
 	module: {
 		rules: [

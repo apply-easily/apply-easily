@@ -1,7 +1,7 @@
 /node_modules
-public/dist
+backend/public/dist
 .DS_Store
 .envrc
 *.log
 /coverage
-config.js
+backend/auth/config.js

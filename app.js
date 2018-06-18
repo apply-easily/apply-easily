@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var authRouter = require('./routes/authentication');
+var indexRouter = require('./backend/routes/index');
+var authRouter = require('./backend/routes/authentication');
 
 var app = express();
 
@@ -13,13 +13,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'backend/public')));
 
 app.use('/api', indexRouter);
 app.use('/auth', authRouter);
 
 app.get('/*', function(req, res) {
-	res.sendFile(path.join(__dirname, 'public/index.html'), function(err) {
+	res.sendFile(path.join(__dirname, 'backend/public/index.html'), function(
+		err
+	) {
 		if (err) {
 			res.status(500).send(err);
 		}

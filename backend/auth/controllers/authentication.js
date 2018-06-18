@@ -1,5 +1,5 @@
 const jwt = require('jwt-simple');
-const config = require('../../config');
+const config = require('../config');
 const { createUser } = require('../actions/signUp');
 const bcrypt = require('bcrypt');
 

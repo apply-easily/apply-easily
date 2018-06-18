@@ -1,5 +1,5 @@
 const passport = require('passport');
-const config = require('../../config');
+const config = require('../config');
 const jwtStrategy = require('passport-jwt').Strategy;
 const extractJwt = require('passport-jwt').ExtractJwt;
 const { findUserById, verifyUser } = require('../actions/signIn');
