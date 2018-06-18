@@ -5,7 +5,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1 className="top-heading">This will be our awesome app</h1>
-				<p>stuff</p>
+				<p>A lot of stuff</p>
 			</div>
 		);
 	}
