@@ -14,7 +14,6 @@ router.get('/', (req, res, next) => {
 
 //Testing route for getting all list of users if user autorized. Doesn't work now
 router.get('/users', requireAuth, (req, res) => {
-	console.log(req.headers);
 	db.any('SELECT * FROM users')
 		.then(data => res.json(data))
 		.catch(error => res.json({ error: error.message }));
